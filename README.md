@@ -30,13 +30,13 @@ Vá para Run > Run 'Main'.
 Ao executar o programa, o usuário será solicitado a inserir os dados do financiamento (valor do imóvel, prazo de financiamento e taxa de juros anual). Em seguida, o programa calculará e exibirá o pagamento mensal e o total a ser pago para cada tipo de financiamento.
 
 ## Estrutura das Classes
-# Main
+### Main
 Executa o programa e lida com a interação do usuário.
 Adiciona financiamentos diretamente no código para facilitar os testes.
-# Financiamento (abstrata)
+### Financiamento (abstrata)
 Define a estrutura básica de um financiamento.
 Métodos abstratos para cálculo do pagamento mensal e total.
-# Casa, Apartamento, Terreno (subclasses de Financiamento)
+### Casa, Apartamento, Terreno (subclasses de Financiamento)
 Implementam regras específicas para cada tipo de financiamento.
-# InterfaceUsuario
+### InterfaceUsuario
 Lida com a entrada de dados do usuário e garante que os valores sejam válidos.
