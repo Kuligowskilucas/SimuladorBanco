@@ -14,13 +14,29 @@ public class Main {
         double valorImovel = interfaceUsuario.pedirValorImovel();
         int prazoFinanciamento = interfaceUsuario.pedirPrazoFinanciamento();
         double taxaJurosAnual = interfaceUsuario.pedirTaxaJurosAnual();
-        Casa financiamentoUsuario = new Casa(valorImovel, prazoFinanciamento, taxaJurosAnual);
-        financiamentos.add(financiamentoUsuario);
 
-        financiamentos.add(new Casa(500000, 10, 10));
-        financiamentos.add(new Apartamento(300000, 15, 8));
-        financiamentos.add(new Apartamento(200000, 20, 7));
-        financiamentos.add(new Terreno(100000, 5, 12));
+        // Exemplo de cadastro de uma Casa
+        double tamanhoAreaConstruida = interfaceUsuario.pedirTamanhoAreaConstruida();
+        double tamanhoTerreno = interfaceUsuario.pedirTamanhoTerreno();
+        Casa financiamentoUsuarioCasa = new Casa(valorImovel, prazoFinanciamento, taxaJurosAnual, tamanhoAreaConstruida, tamanhoTerreno);
+        financiamentos.add(financiamentoUsuarioCasa);
+
+        // Exemplo de cadastro de um Apartamento
+        int numeroVagasGaragem = interfaceUsuario.pedirNumeroVagasGaragem();
+        int numeroAndar = interfaceUsuario.pedirNumeroAndar();
+        Apartamento financiamentoUsuarioApartamento = new Apartamento(valorImovel, prazoFinanciamento, taxaJurosAnual, numeroVagasGaragem, numeroAndar);
+        financiamentos.add(financiamentoUsuarioApartamento);
+
+        // Exemplo de cadastro de um Terreno
+        String tipoZona = interfaceUsuario.pedirTipoZona();
+        Terreno financiamentoUsuarioTerreno = new Terreno(valorImovel, prazoFinanciamento, taxaJurosAnual, tipoZona);
+        financiamentos.add(financiamentoUsuarioTerreno);
+
+        // Exemplo de financiamentos pré-cadastrados
+        financiamentos.add(new Casa(500000, 10, 10, 200, 500));
+        financiamentos.add(new Apartamento(300000, 15, 8, 2, 5));
+        financiamentos.add(new Apartamento(200000, 20, 7, 1, 10));
+        financiamentos.add(new Terreno(100000, 5, 12, "Residencial"));
 
         double totalValorImoveis = 0;
         double totalValorFinanciamentos = 0;

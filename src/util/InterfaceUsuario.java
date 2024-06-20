@@ -45,7 +45,61 @@ public class InterfaceUsuario {
         return taxa;
     }
 
+    public double pedirTamanhoAreaConstruida() {
+        double tamanho;
+        do {
+            System.out.print("Digite o tamanho da área construída (em m², positivo): ");
+            tamanho = scanner.nextDouble();
+            if (tamanho <= 0) {
+                System.out.println("Tamanho inválido. Por favor, insira um valor positivo.");
+            }
+        } while (tamanho <= 0);
+        return tamanho;
+    }
+
+    public double pedirTamanhoTerreno() {
+        double tamanho;
+        do {
+            System.out.print("Digite o tamanho do terreno (em m², positivo): ");
+            tamanho = scanner.nextDouble();
+            if (tamanho <= 0) {
+                System.out.println("Tamanho inválido. Por favor, insira um valor positivo.");
+            }
+        } while (tamanho <= 0);
+        return tamanho;
+    }
+
+    public int pedirNumeroVagasGaragem() {
+        int vagas;
+        do {
+            System.out.print("Digite o número de vagas na garagem (positivo): ");
+            vagas = scanner.nextInt();
+            if (vagas <= 0) {
+                System.out.println("Número de vagas inválido. Por favor, insira um valor positivo.");
+            }
+        } while (vagas <= 0);
+        return vagas;
+    }
+
+    public int pedirNumeroAndar() {
+        int andar;
+        do {
+            System.out.print("Digite o número do andar (positivo): ");
+            andar = scanner.nextInt();
+            if (andar <= 0) {
+                System.out.println("Número do andar inválido. Por favor, insira um valor positivo.");
+            }
+        } while (andar <= 0);
+        return andar;
+    }
+
+    public String pedirTipoZona() {
+        System.out.print("Digite o tipo de zona (residencial ou comercial): ");
+        return scanner.next();
+    }
+
     public boolean pedirContinuar() {
+        System.out.print("Deseja continuar? (true/false): ");
         return scanner.nextBoolean();
     }
 }
