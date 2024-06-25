@@ -24,6 +24,14 @@ public class Casa extends Financiamento {
         return tamanhoTerreno;
     }
 
+    public void aplicarDesconto(double desconto) throws DescontoMaiorDoQueJurosException {
+        double jurosMensal = calcularPagamentoMensal() - (getValorImovel() / (getPrazoFinanciamento() * 12));
+        if (desconto > jurosMensal) {
+            throw new DescontoMaiorDoQueJurosException("O valor do desconto não pode ser maior do que o valor dos juros.");
+        }
+        // Lógica para aplicar o desconto
+    }
+
     @Override
     public void mostrarDadosFinanciamento() {
         super.mostrarDadosFinanciamento();
