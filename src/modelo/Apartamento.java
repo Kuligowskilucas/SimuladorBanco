@@ -31,4 +31,10 @@ public class Apartamento extends Financiamento {
         System.out.printf("Número de Vagas na Garagem: %d%n", numeroVagasGaragem);
         System.out.printf("Número do Andar: %d%n", numeroAndar);
     }
+
+    @Override
+    public String toString() {
+        return "Apartamento," + getValorImovel() + "," + getPrazoFinanciamento() + "," + getTaxaJurosAnual() + "," + numeroVagasGaragem + "," + numeroAndar;
+    }
+    
 }

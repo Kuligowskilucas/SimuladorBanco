@@ -23,4 +23,10 @@ public class Terreno extends Financiamento {
         super.mostrarDadosFinanciamento();
         System.out.printf("Tipo de Zona: %s%n", tipoZona);
     }
+
+    @Override
+public String toString() {
+    return "Terreno," + getValorImovel() + "," + getPrazoFinanciamento() + "," + getTaxaJurosAnual() + "," + tipoZona;
+}
+
 }
